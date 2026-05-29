@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist/public",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "BASE_PATH": "/"
+  },
+  "installCommand": "npm install"
+}
