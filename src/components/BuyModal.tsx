@@ -55,6 +55,8 @@ export function BuyModal({ isOpen, onClose, product }: BuyModalProps) {
     }
   };
 
+  const API_URL = import.meta.env.VITE_API_URL || "";
+
   const handleSubmit = async () => {
     if (!email) {
       setError("Email is required");
@@ -64,7 +66,7 @@ export function BuyModal({ isOpen, onClose, product }: BuyModalProps) {
     setError("");
     
     try {
-      const res = await fetch("/api/order", {
+      const res = await fetch(`${API_URL}/api/order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
